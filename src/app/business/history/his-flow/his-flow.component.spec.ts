@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MainMapComponent } from './main-map.component';
+import { HisFlowComponent } from './his-flow.component';
 
-describe('MainMapComponent', () => {
-  let component: MainMapComponent;
-  let fixture: ComponentFixture<MainMapComponent>;
+describe('HisFlowComponent', () => {
+  let component: HisFlowComponent;
+  let fixture: ComponentFixture<HisFlowComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MainMapComponent ]
+      declarations: [ HisFlowComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MainMapComponent);
+    fixture = TestBed.createComponent(HisFlowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
