@@ -8,6 +8,8 @@ import { InspStatisticsComponent } from './insp-statistics/insp-statistics.compo
 import { InspScheduleComponent } from './insp-schedule/insp-schedule.component';
 import { InspRecordingComponent } from './insp-recording/insp-recording.component';
 import { InspComponent } from './insp/insp.component';
+import {EchartsBarModule} from '../../common/components/echarts-bar/echarts-bar.module';
+import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { InspComponent } from './insp/insp.component';
   ],
   imports: [
     CommonModule,
-    InspectionRoutingModule
+    InspectionRoutingModule,
+    EchartsBarModule,
+    EchartsMapModule
   ]
 })
 export class InspectionModule { }

@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {MainComponent} from './main/main.component';
 const tabRoutes: Routes = [
-  {path: '', redirectTo: 'main', pathMatch: 'full'},
-  {path: 'main', component: MainComponent},
+  {path: '', component: MainComponent},
 ];
 @NgModule({
   imports: [RouterModule.forChild(tabRoutes)],

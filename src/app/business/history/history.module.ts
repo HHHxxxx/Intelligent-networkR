@@ -8,6 +8,11 @@ import { HisEventComponent } from './his-event/his-event.component';
 import { HisPropComponent } from './his-prop/his-prop.component';
 import { HisStatisticsComponent } from './his-statistics/his-statistics.component';
 import { HisFlowComponent } from './his-flow/his-flow.component';
+import {EchartsBarModule} from '../../common/components/echarts-bar/echarts-bar.module';
+import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
+import {EchartsLineModule} from '../../common/components/echarts-line/echarts-line.module';
+import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
+import {EchartsCdkModule} from '../../common/components/echarts-cdk/echarts-cdk.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +25,11 @@ import { HisFlowComponent } from './his-flow/his-flow.component';
   ],
   imports: [
     CommonModule,
-    HistoryRoutingModule
+    HistoryRoutingModule,
+    EchartsBarModule,
+    EchartsMapModule,
+    EchartsPieModule,
+    EchartsCdkModule
   ]
 })
 export class HistoryModule { }

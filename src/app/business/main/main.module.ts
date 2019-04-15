@@ -9,6 +9,10 @@ import { MainLoadrateComponent } from './main-loadrate/main-loadrate.component';
 import { MainFlowComponent } from './main-flow/main-flow.component';
 import { MainProportionComponent } from './main-proportion/main-proportion.component';
 import {MainRoutingModule} from './main-routing.module';
+import {EchartsBarModule} from '../../common/components/echarts-bar/echarts-bar.module';
+import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
+import {EchartsLineModule} from '../../common/components/echarts-line/echarts-line.module';
+import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,11 @@ import {MainRoutingModule} from './main-routing.module';
   ],
   imports: [
     CommonModule,
-    MainRoutingModule
+    MainRoutingModule,
+    EchartsBarModule,
+    EchartsMapModule,
+    EchartsLineModule,
+    EchartsPieModule
   ]
 })
 export class MainModule { }

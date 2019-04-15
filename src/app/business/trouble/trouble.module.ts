@@ -6,6 +6,10 @@ import {TroubleProportionComponent} from './trouble-proportion/trouble-proportio
 import {TroubleWorkerComponent} from './trouble-worker/trouble-worker.component';
 import {TroubleStatisticsComponent} from './trouble-statistics/trouble-statistics.component';
 import {TroubleComponent} from './trouble/trouble.component';
+import {TroubleRoutingModule} from './trouble-routing.module';
+import {EchartsBarModule} from '../../common/components/echarts-bar/echarts-bar.module';
+import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
+import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import {TroubleComponent} from './trouble/trouble.component';
     TroubleStatisticsComponent,
     TroubleComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    TroubleRoutingModule,
+    EchartsBarModule,
+    EchartsPieModule,
+    EchartsMapModule
   ]
 })
 export class TroubleModule {
