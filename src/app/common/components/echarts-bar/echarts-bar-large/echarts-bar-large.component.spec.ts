@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EchartsBarLargeComponent } from './echarts-bar-large.component';
+import { EnchantsBarLargeComponent } from './echarts-bar-large.component';
 
-describe('EchartsBarLargeComponent', () => {
-  let component: EchartsBarLargeComponent;
-  let fixture: ComponentFixture<EchartsBarLargeComponent>;
+describe('EnchantsBarLargeComponent', () => {
+  let component: EnchantsBarLargeComponent;
+  let fixture: ComponentFixture<EnchantsBarLargeComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EchartsBarLargeComponent ]
+      declarations: [ EnchantsBarLargeComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EchartsBarLargeComponent);
+    fixture = TestBed.createComponent(EnchantsBarLargeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

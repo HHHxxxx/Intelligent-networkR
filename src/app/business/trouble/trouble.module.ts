@@ -7,9 +7,10 @@ import {TroubleWorkerComponent} from './trouble-worker/trouble-worker.component'
 import {TroubleStatisticsComponent} from './trouble-statistics/trouble-statistics.component';
 import {TroubleComponent} from './trouble/trouble.component';
 import {TroubleRoutingModule} from './trouble-routing.module';
-import {EchartsBarModule} from '../../common/components/echarts-bar/echarts-bar.module';
+import {EnchantsBarModule} from '../../common/components/echarts-bar/enchants-bar.module';
 import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
 import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
+import {MainService} from '../../common/services/main.service';
 
 @NgModule({
   declarations: [
@@ -22,10 +23,11 @@ import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.
   imports: [
     CommonModule,
     TroubleRoutingModule,
-    EchartsBarModule,
+    EnchantsBarModule,
     EchartsPieModule,
-    EchartsMapModule
-  ]
+    EchartsMapModule,
+  ],
+  providers: [MainService]
 })
 export class TroubleModule {
 }

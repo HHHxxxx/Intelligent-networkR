@@ -5,11 +5,9 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './echarts-bar-large.component.html',
   styleUrls: ['./echarts-bar-large.component.less']
 })
-export class EchartsBarLargeComponent implements OnInit {
-
-  constructor() { }
-
+export class EnchantsBarLargeComponent implements OnInit {
+  constructor() {
+  }
   ngOnInit() {
   }
-
 }

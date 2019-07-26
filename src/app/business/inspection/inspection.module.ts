@@ -8,8 +8,9 @@ import { InspStatisticsComponent } from './insp-statistics/insp-statistics.compo
 import { InspScheduleComponent } from './insp-schedule/insp-schedule.component';
 import { InspRecordingComponent } from './insp-recording/insp-recording.component';
 import { InspComponent } from './insp/insp.component';
-import {EchartsBarModule} from '../../common/components/echarts-bar/echarts-bar.module';
+import {EnchantsBarModule} from '../../common/components/echarts-bar/enchants-bar.module';
 import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
+import {MainService} from '../../common/services/main.service';
 
 @NgModule({
   declarations: [
@@ -23,8 +24,9 @@ import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.
   imports: [
     CommonModule,
     InspectionRoutingModule,
-    EchartsBarModule,
+    EnchantsBarModule,
     EchartsMapModule
-  ]
+  ],
+  providers: [MainService]
 })
 export class InspectionModule { }

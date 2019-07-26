@@ -9,10 +9,11 @@ import { MainLoadrateComponent } from './main-loadrate/main-loadrate.component';
 import { MainFlowComponent } from './main-flow/main-flow.component';
 import { MainProportionComponent } from './main-proportion/main-proportion.component';
 import {MainRoutingModule} from './main-routing.module';
-import {EchartsBarModule} from '../../common/components/echarts-bar/echarts-bar.module';
+import {EnchantsBarModule} from '../../common/components/echarts-bar/enchants-bar.module';
 import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
 import {EchartsLineModule} from '../../common/components/echarts-line/echarts-line.module';
 import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
+import {MainService} from '../../common/services/main.service';
 
 @NgModule({
   declarations: [
@@ -28,10 +29,11 @@ import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.
   imports: [
     CommonModule,
     MainRoutingModule,
-    EchartsBarModule,
+    EnchantsBarModule,
     EchartsMapModule,
     EchartsLineModule,
-    EchartsPieModule
-  ]
+    EchartsPieModule,
+  ],
+  providers: [MainService]
 })
 export class MainModule { }

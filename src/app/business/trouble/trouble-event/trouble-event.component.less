@@ -1,5 +1,43 @@
-.insp-event{
-  .title{
-    color: red;
-  }
+.latest_data{
+  height: 60vh;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 20px #1E5A88 inset;
+  border: 1px solid #253B58;
+  margin-bottom: 5px;
+}
+.latest_data .title {
+  text-indent: 2rem;
+  color: #fff;
+  font-size: 14px;
+  text-align: left;
+  padding-top: 10px;
+}
+.list_data .line_item{
+  height: 60px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  flex: 4;
+}
+.line_item span {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  color: #fff;
+  font-size: 12px;
+}
+/* 列表页头标题样式 */
+.line_head{
+  background: #18273F;
+  position: relative;
+  z-index: 11;
+}
+
+/* 列表内容区域展示样式 */
+.list_data .data_body{
+  overflow: hidden;
+}
+.data_body .line_item{
+  background: rgba(0,0,0,0.5);
 }

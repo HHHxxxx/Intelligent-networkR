@@ -1,5 +1,52 @@
-<div class="echarts-map">
-  <p>
-    地图
-  </p>
+<div class="map-view">
+  <div class="map">
+      <div class="row">
+        <!--地图标题-->
+        <div class="title">
+          <i class="fa fa-home"></i>
+          <span class="map-title" style="margin-left: 0.5vw;">管辖区域-实时视图</span>
+        </div>
+        <!--地图分布-->
+        <div id="myMap" style="height: 60vh;width: 100%;"></div>
+        <!--地图左侧异常信息说明-->
+        <div class="white-title">
+          <ul>
+            <li><span></span>&nbsp;&nbsp;井盖位移</li>
+            <li><span></span>&nbsp;&nbsp;井盖传感器损坏</li>
+            <li><span></span>&nbsp;&nbsp;井水位异常</li>
+            <li><span></span>&nbsp;&nbsp;管道水位异常</li>
+            <li><span></span>&nbsp;&nbsp;管道堵塞</li>
+            <li><span></span>&nbsp;&nbsp;管道水位传感器异常</li>
+          </ul>
+        </div>
+        <!--省市联动-->
+        <div class="location" (click)="administrativeClick()">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <span class="map-title" style="margin-left: 0.5vw;">当前位置：{{selectDate}}</span>
+        </div>
+        <!--省-->
+        <ul class="select-list-province" *ngIf="provinceShow">
+          <li *ngFor="let item of province"
+              (mouseenter)="provinceMouseEnter(item)"
+              (click)="provinceDataClick(item)"          >
+            {{item}}
+          </li>
+        </ul>
+        <!--市-->
+        <ul class="select-list-city" *ngIf="cityShow">
+          <li *ngFor="let item of city"
+              (click)="cityDataClick(item)"
+              (mouseenter)="cityMouseEnter(item)"
+          >
+            {{item}}
+          </li>
+        </ul>
+        <!--区-->
+        <ul class="select-list-town" *ngIf="townsShow">
+          <li *ngFor="let item of towns" (click)="townsDataClick(item)">
+            {{item}}
+          </li>
+        </ul>
+      </div>
+  </div>
 </div>

@@ -1,0 +1,111 @@
+.map-view {
+  position: relative;
+}
+.map-view>.map{
+  padding-top: 0.5vh;
+}
+/*左上角黑色标题*/
+.title{
+  position: absolute;
+  background-color:#202833;
+  width: 10vw;
+  height: 4vh;
+  line-height: 4vh;
+  color: white;
+  font-size: 1rem;
+  padding-left: 1vw;
+  z-index: 1;
+}
+.location{
+  position: absolute;
+  left: 10vw;
+  top: 0.5vh;
+  background-color: #0F93FF;
+  min-width: 11vw;
+  height: 4vh;
+  line-height: 4vh;
+  color: white;
+  font-size: 1rem;
+  z-index: 1;
+  padding-left: 1vw;
+  padding-right: 1vw;
+}
+.location:hover{
+  cursor: pointer;
+}
+.select-list-province,.select-list-city,.select-list-town{
+  background: rgba(120,120,112,0.8);
+  padding-left: 0;
+  color: #87FFFF;
+  position: absolute;
+  top: 2.8vh;
+  left: 11.8vw;
+  z-index: 1;
+}
+.select-list-city{
+  top: 12vh;
+  left: 24.3vw;
+}
+.select-list-town{
+  top: 18vh;
+  left: 33.6vw;
+}
+.select-list-province>li,.select-list-city>li,.select-list-town>li{
+  list-style: none;
+  padding: 10px 40px;
+  text-align: center;
+  min-width: 180px;
+}
+.select-list-province>li:hover,.select-list-city>li:hover,.select-list-town>li:hover{
+  cursor: pointer;
+  background: #CE4939;
+}
+
+/*左下角白块信息框*/
+.white-title{
+  font-size: 0.4rem;
+  background-color: rgba(255,255,255,.5);
+  position: absolute;
+  left: 0;
+  bottom: 2vh;
+}
+.white-title ul{
+  list-style: none;
+  font-weight: bolder;
+  padding-left: 0.5vw;
+  padding-right: 2vw;
+}
+.white-title span{
+  display: inline-block;
+  width: 0.5vw;
+  height: 1vh;
+  border-radius: 50%;
+}
+.white-title li:nth-child(1) > span{
+  padding-top: 10px;
+  background-color: #f9523f;
+}
+.white-title li:nth-child(2) > span{
+  padding-top: 10px;
+  background-color: #0f93ff;
+}
+.white-title li:nth-child(3) > span{
+  padding-top: 10px;
+  background-color: #9400d3;
+}
+.white-title li:nth-child(4) > span{
+  padding-top: 10px;
+  background-color: #7cfc00;
+}
+.white-title li:nth-child(5) > span{
+  padding-top: 10px;
+  background-color: #ffd700;
+}
+.white-title li:nth-child(6) > span{
+  padding-top: 10px;
+  background-color: #12B1B7;
+}
+.white-title li{
+  padding: 3px 5px;
+  font-size: 13px;
+}
