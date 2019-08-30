@@ -6,21 +6,17 @@
     <span class="rb"></span>
   </div>
   <p class="title">实时异常事件列表</p>
-  <div class="list_data">
+  <div class="ui-g-12 list_data">
     <div class="line_item line_head">
-      <span>类型</span>
-      <span>时间</span>
-      <span>坐标</span>
-      <span>事件描述</span>
+      <span *ngFor="let i of head">{{i.header}}</span>
     </div>
-    <div id="data_body">
-      <div class="line_item">
-        <span>井盖丢失</span>
-        <span>2019/12/23
-          16：00</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>1号井盖丢失</span>
+    <div class="data_body">
+      <div class="line_item" *ngFor="let item of exceptionList;">
+        <span>{{item?.currentTime}}</span>
+        <span>{{item?.targetType}}</span>
+        <span>{{item?.position}}</span>
+        <span>{{item?.eventType}}</span>
       </div>
     </div>
-  </div>
+ </div>
 </div>

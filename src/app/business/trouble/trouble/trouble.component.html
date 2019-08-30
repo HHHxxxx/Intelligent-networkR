@@ -1,17 +1,17 @@
 <div class="trouble">
   <div class="ui-g">
     <div class="trouble-left ui-g-8">
-      <rbi-trouble-map></rbi-trouble-map>
-      <div class="ui-g-6">
-        <rbi-trouble-proportion></rbi-trouble-proportion>
+      <rbi-trouble-map [Pipettes]="Pipettes"></rbi-trouble-map>
+      <div class="ui-g-6 proportion">
+        <rbi-trouble-proportion></rbi-trouble-proportion >
       </div>
-      <div class="ui-g-6">
+      <div class="ui-g-6 worker">
         <rbi-trouble-worker></rbi-trouble-worker>
       </div>
     </div>
     <div class="trouble-right ui-g-4">
-     <rbi-trouble-event></rbi-trouble-event>
-      <rbi-trouble-statistics></rbi-trouble-statistics>
+     <rbi-trouble-event  [pLId]="pLId" (event)="getPipeDta($event)" [tableContent]="tableContet"></rbi-trouble-event>
+      <rbi-trouble-statistics [RepairData]="RepairData"></rbi-trouble-statistics>
     </div>
   </div>
 </div>

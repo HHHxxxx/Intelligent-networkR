@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-trouble-statistics',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trouble-statistics.component.less']
 })
 export class TroubleStatisticsComponent implements OnInit {
-
+  @Input()RepairData: any;
   constructor() { }
 
   ngOnInit() {

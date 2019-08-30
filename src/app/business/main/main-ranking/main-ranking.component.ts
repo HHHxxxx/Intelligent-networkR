@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-main-ranking',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-ranking.component.less']
 })
 export class MainRankingComponent implements OnInit {
-
+  @Input()PipeWF: any;
   constructor() { }
 
   ngOnInit() {

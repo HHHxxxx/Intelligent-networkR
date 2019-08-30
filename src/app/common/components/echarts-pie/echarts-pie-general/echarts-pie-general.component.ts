@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 
 @Component({
   selector: 'rbi-echarts-pie-general',
   templateUrl: './echarts-pie-general.component.html',
   styleUrls: ['./echarts-pie-general.component.less']
 })
-export class EchartsPieGeneralComponent implements OnInit {
-
+export class EchartsPieGeneralComponent implements OnInit, OnChanges {
+  @Input()abnormal: any;
+  // public general: any;
+  public abnormalName = []; // 异常名称
+  public abnormalCount = []; // 异常次数
+  public abnormalPercent = []; // 异常比例
   constructor() { }
   general = {
     title : {
@@ -53,6 +57,8 @@ export class EchartsPieGeneralComponent implements OnInit {
     ]
   };
   ngOnInit() {
+  }
+  ngOnChanges(changes: SimpleChanges): void {
   }
 
 }

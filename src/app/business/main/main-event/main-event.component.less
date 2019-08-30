@@ -4,14 +4,14 @@
   position: relative;
   box-shadow: 0 0 20px #1E5A88 inset;
   border: 1px solid #253B58;
-  margin-bottom: 5px;
-}
-.latest_data .title {
-  text-indent: 2rem;
-  color: #fff;
-  font-size: 14px;
-  text-align: left;
-  padding-top: 10px;
+  margin-bottom: 1vh;
+  .title {
+    text-indent: 2rem;
+    color: #fff;
+    font-size: 14px;
+    text-align: left;
+    padding-top: 10px;
+  }
 }
 .list_data .line_item{
   height: 60px;
@@ -35,18 +35,33 @@
 }
 
 /* 列表内容区域展示样式 */
-.list_data #data_body{
+.list_data .data_body{
   overflow: hidden;
 }
-#data_body .line_item{
-  background: rgba(0,0,0,0.5);
+.data_body .line_item{
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
-#data_body{
-  height: 50vh;
-  overflow: hidden;
-  white-space: nowrap;
-  width: 100%;text-align: center;
+.box{
+  color: #fff;
+  font-size: 1rem;
 }
-#data_body.line_item,#scroll_end{
-  display: inline;
+.event{
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: #fff;
+  margin-left: 1vw;
+}
+::ng-deep .box .ui-dropdown {
+  min-width: 2em;
+  float: right;
+  line-height: 1.5vh;
+}
+.container{
+  margin-top: 5vh;
+  height: 25vh;
+  text-align: center;
+}
+.ui-g-6{
+  margin-bottom: 2vh;
 }

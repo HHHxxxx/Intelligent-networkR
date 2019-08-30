@@ -2,15 +2,15 @@
   <div class="ui-g">
     <div class="insp-left ui-g-8">
       <rbi-insp-map></rbi-insp-map>
-      <div class="ui-g-6">
-        <rbi-insp-monitor></rbi-insp-monitor>
+      <div class="ui-g-6 monitor">
+        <rbi-insp-monitor [Equipment]="Equipment"></rbi-insp-monitor>
       </div>
-      <div class="ui-g-6">
-        <rbi-insp-statistics></rbi-insp-statistics>
+      <div class="ui-g-6 statistics">
+        <rbi-insp-statistics [Insp]="Insp"></rbi-insp-statistics>
       </div>
     </div>
     <div class="insp-right ui-g-4">
-      <rbi-insp-schedule></rbi-insp-schedule>
+      <rbi-insp-schedule [PLID]="PLID" [tableContent]="tableContet"></rbi-insp-schedule>
       <rbi-insp-recording></rbi-insp-recording>
     </div>
   </div>

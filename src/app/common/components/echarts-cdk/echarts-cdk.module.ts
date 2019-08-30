@@ -7,7 +7,7 @@ import {NgxEchartsModule} from 'ngx-echarts';
   declarations: [EchartsCdkIdxComponent],
   imports: [
     CommonModule,
-    NgxEchartsModule
+    NgxEchartsModule,
   ],
   exports: [EchartsCdkIdxComponent]
 })

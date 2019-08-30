@@ -11,6 +11,8 @@ import { InspComponent } from './insp/insp.component';
 import {EnchantsBarModule} from '../../common/components/echarts-bar/enchants-bar.module';
 import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
 import {MainService} from '../../common/services/main.service';
+import {ButtonModule, DialogModule, DropdownModule, RadioButtonModule} from "primeng/primeng";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,12 @@ import {MainService} from '../../common/services/main.service';
     CommonModule,
     InspectionRoutingModule,
     EnchantsBarModule,
-    EchartsMapModule
+    EchartsMapModule,
+    DropdownModule,
+    FormsModule,
+    DialogModule,
+    ButtonModule,
+    RadioButtonModule
   ],
   providers: [MainService]
 })

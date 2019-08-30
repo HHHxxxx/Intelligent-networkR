@@ -10,6 +10,7 @@ import {SessionService} from '../common/services/session.service';
   styleUrls: ['./login.component.less']
 })
 export class LoginComponent implements OnInit {
+  public Regions = [];
   // 表单
   public myFromModule: FormGroup;
   public formUsername: any;
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private fb: FormBuilder,
     private login: LoginService,
-    private session: SessionService
+    private session: SessionService,
   ) {
     this.myFromModule = fb.group({
       userName: ['', [Validators.required]],
@@ -32,19 +33,20 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   public onSubmit(): void {
     if (this.myFromModule.valid) {
-      console.log(this.session.parameterSerializationForm(this.myFromModule.value));
-      this.login.submitForm(this.session.parameterSerializationForm(this.myFromModule.value))
+      console.log(this.myFromModule.value);
+      this.login.submitForm(this.myFromModule.value)
         .subscribe(res => {
           this.tj = res.msg;
+          this.Regions = res.region;
+          console.log(this.Regions);
           console.log(res);
           if (this.tj === 14) {
             this.session.set('accessToken', res.token);
-            this.session.setObject('regionInfo', res.regionInfo);
+            this.session.setlocalObject('region', res.region);
             this.router.navigate(['/home/main']);
           } else if (this.tj === 10) {
             this.tips = '用户不存在';

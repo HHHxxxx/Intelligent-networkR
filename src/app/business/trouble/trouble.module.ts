@@ -11,6 +11,14 @@ import {EnchantsBarModule} from '../../common/components/echarts-bar/enchants-ba
 import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
 import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
 import {MainService} from '../../common/services/main.service';
+import {FormsModule} from '@angular/forms';
+import {
+  ButtonModule,
+  ConfirmationService, DialogModule,
+  DropdownModule,
+  TabMenuModule, TabViewModule,
+  ToggleButtonModule
+} from 'primeng/primeng';
 
 @NgModule({
   declarations: [
@@ -26,8 +34,15 @@ import {MainService} from '../../common/services/main.service';
     EnchantsBarModule,
     EchartsPieModule,
     EchartsMapModule,
+    FormsModule,
+    TabMenuModule,
+    ToggleButtonModule,
+    DropdownModule,
+    ButtonModule,
+    DialogModule,
+    TabViewModule,
   ],
-  providers: [MainService]
+  providers: [MainService, ConfirmationService]
 })
 export class TroubleModule {
 }

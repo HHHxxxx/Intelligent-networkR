@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-trouble-map',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trouble-map.component.less']
 })
 export class TroubleMapComponent implements OnInit {
-
+  @Input() Pipettes: any;
   constructor() { }
 
   ngOnInit() {

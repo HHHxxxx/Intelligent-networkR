@@ -5,72 +5,112 @@
     <span class="rt"></span>
     <span class="rb"></span>
   </div>
-  <p class="title">事件列表</p>
-  <div class="list_data">
-    <div class="line_item line_head">
-      <span>异常目标ID</span>
-      <span>异常时间</span>
-      <span>异常类型</span>
-      <span>坐标</span>
-      <span>异常状态</span>
-      <span>问题类型</span>
-      <span>操作</span>
-    </div>
-    <div class="data_body">
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
+      <div class="title ui-g-2">
+        <span>事件列表</span>
       </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
+      <div class="box">
+        <p-dropdown class="drop-box" [options]="items" [(ngModel)]="item" placeholder="7081-1管线" [itemSize]="20" (onChange)="eventChange()"></p-dropdown>
       </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
+  <p-tabView (onChange)="tabChange($event)">
+    <p-tabPanel header="未处理" >
+      <div class="list_data">
+            <div class="line_item line_head">
+              <span *ngFor="let i of prop">{{i.header}}</span>
+            </div>
+            <div class="data_body">
+              <div class="line_item" *ngFor="let item of tableContent">
+                <span>{{item?.eventTargetId}}</span>
+                <span>{{item?.currentTime}}</span>
+                <span>{{item?.targetType}}</span>
+                <span>{{item?.gpsPosition}}</span>
+                <span>{{item?.eventType}}</span>
+                <span>{{item?.eventState}}</span>
+                <span><button type="button" (click)="showDialog()" pButton label="指派"></button></span>
+              </div>
+            </div>
       </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
+    </p-tabPanel>
+    <p-tabPanel header="指派中">
+      <div class="list_data">
+        <div class="line_item line_head">
+          <span *ngFor="let i of head">{{i.header}}</span>
+        </div>
+        <div class="data_body">
+          <div class="line_item" *ngFor="let item of tableContent">
+            <span>{{item?.eventTargetId}}</span>
+            <span>{{item?.currentTime}}</span>
+            <span>{{item?.targetType}}</span>
+            <span>{{item?.eventType}}</span>
+            <span>{{item?.gpsPosition}}</span>
+            <span>{{item?.name}}</span>
+            <span>{{item?.userName}}</span>
+          </div>
+        </div>
       </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
+    </p-tabPanel>
+    <p-tabPanel header="进行中">
+      <div class="list_data">
+        <div class="line_item line_head">
+          <span *ngFor="let i of head">{{i.header}}</span>
+        </div>
+        <div class="data_body">
+          <div class="line_item" *ngFor="let item of tableContent">
+            <span>{{item?.eventTargetId}}</span>
+            <span>{{item?.currentTime}}</span>
+            <span>{{item?.targetType}}</span>
+            <span>{{item?.eventType}}</span>
+            <span>{{item?.gpsPosition}}</span>
+            <span>{{item?.name}}</span>
+            <span>{{item?.userName}}</span>
+          </div>
+        </div>
       </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
+    </p-tabPanel>
+    <p-tabPanel header="已完成">
+      <div class="list_data">
+        <div class="line_item line_head">
+          <span *ngFor="let i of head">{{i.header}}</span>
+        </div>
+        <div class="data_body">
+          <div class="line_item" *ngFor="let item of tableContent">
+            <span>{{item?.eventTargetId}}</span>
+            <span>{{item?.currentTime}}</span>
+            <span>{{item?.targetType}}</span>
+            <span>{{item?.eventType}}</span>
+            <span>{{item?.gpsPosition}}</span>
+            <span>{{item?.name}}</span>
+            <span>{{item?.userName}}</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </p-tabPanel>
+  </p-tabView>
+  <!--指派弹出框-->
+  <div class="dialog">
+    <p-dialog header="任务指派" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '50vw', height: '30vh'}">
+      <div class="container ui-g-12">
+        <div class="ui-g-12">
+          <div class="ui-g-6">任务对象ID:
+            <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+          </div>
+          <div class="ui-g-6">任务类型：
+            <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+          </div>
+        </div>
+        <div class="ui-g-12">
+          <div class="ui-g-6">派发人账号:
+            <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+          </div>
+          <div class="ui-g-6">接收人账号:
+            <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+          </div>
+        </div>
+      </div>
+      <p-footer>
+        <button type="button" pButton icon="pi pi-check" (click)="display=false" label="确认指派"></button>
+        <button type="button" pButton icon="pi pi-close" (click)="display=false" label="取消指派" class="ui-button-secondary"></button>
+      </p-footer>
+    </p-dialog>
   </div>
 </div>
+

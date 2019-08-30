@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-main-loadrate',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-loadrate.component.less']
 })
 export class MainLoadrateComponent implements OnInit {
-
+  @Input()avgLoadRatio: any;
   constructor() { }
 
   ngOnInit() {

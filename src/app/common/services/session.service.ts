@@ -30,6 +30,13 @@ export class SessionService {
   public remove(key: string): any {
     this.sessionStorage.removeItem(key);
   }
+  public setlocalObject(key: string, value: any): void {
+    this.sessionStorage[key] = JSON.stringify(value);
+  }
+
+  public getlocalObject(key: string): any {
+    return JSON.parse(this.sessionStorage[key] || '{}');
+  }
   // 表单参数序列化
   public parameterSerializationForm(obj: object): string {
     let result: string;
@@ -43,5 +50,18 @@ export class SessionService {
       }
     }
     return result;
+  }
+}
+export class UserRegion {
+  userId: string;
+  provinceRegionId: string; // 省地区id
+  cityRegionId: string; // 市地区Id
+  countyRegionId: string; // （县/区）地区Id
+  townRegionId: string; // （镇或者乡）地区Id
+  constructor(provinceRegionId: string, cityRegionId: string, countyRegionId: string, townRegionId: string) {
+    this.cityRegionId = cityRegionId;
+    this.countyRegionId = countyRegionId;
+    this.provinceRegionId = provinceRegionId;
+    this.townRegionId = townRegionId;
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-insp-monitor',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./insp-monitor.component.less']
 })
 export class InspMonitorComponent implements OnInit {
-
+  @Input()Equipment: any;
   constructor() { }
 
   ngOnInit() {

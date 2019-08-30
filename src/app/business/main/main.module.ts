@@ -14,6 +14,10 @@ import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.
 import {EchartsLineModule} from '../../common/components/echarts-line/echarts-line.module';
 import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
 import {MainService} from '../../common/services/main.service';
+import {NgxEchartsModule} from 'ngx-echarts';
+import {FormsModule} from '@angular/forms';
+import {RadioButtonModule, ToggleButtonModule} from 'primeng/primeng';
+import {TableModule} from 'primeng/table';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,11 @@ import {MainService} from '../../common/services/main.service';
     EchartsMapModule,
     EchartsLineModule,
     EchartsPieModule,
+    NgxEchartsModule,
+    FormsModule,
+    RadioButtonModule,
+    ToggleButtonModule,
+    TableModule
   ],
   providers: [MainService]
 })

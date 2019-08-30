@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-main-proportion',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-proportion.component.less']
 })
 export class MainProportionComponent implements OnInit {
-
+  @Input()abnormal: any;
   constructor() { }
   ngOnInit() {
   }

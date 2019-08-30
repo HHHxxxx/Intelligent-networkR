@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-main-description',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-description.component.less']
 })
 export class MainDescriptionComponent implements OnInit {
-
+  @Input()PLCI: any;
   constructor() { }
 
   ngOnInit() {

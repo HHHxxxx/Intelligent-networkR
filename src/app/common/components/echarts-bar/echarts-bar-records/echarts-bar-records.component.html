@@ -1,0 +1,45 @@
+<div class="echarts-bar-records">
+  <div class="ui-g">
+    <div class="title ui-g-2">
+      <p>巡检记录</p>
+    </div>
+    <div class="radioButton ui-g-6">
+      <p-radioButton name="group1" value="Option 1" label="今日" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group1" value="Option 1" label="本周" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group1" value="Option 1" label="本月" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group1" value="Option 1" label="本年" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+    </div>
+    <div class="box ui-g-4">
+      <p-dropdown class="drop-box" [options]="items" [(ngModel)]="item" placeholder="1号管线" [itemSize]="20"></p-dropdown>
+    </div>
+  </div>
+  <div class="ui-g-12 list_data">
+    <div class="line_item line_head">
+      <span>异常目标ID</span>
+      <span>异常时间</span>
+      <span>异常类型</span>
+      <span>坐标</span>
+      <span>异常状态</span>
+      <span>问题类型</span>
+      <span>操作</span>
+    </div>
+    <div class="data_body">
+      <div class="line_item">
+        <span>w01</span>
+        <span>2019/12/23 16：00</span>
+        <span>井盖</span>
+        <span>白云区大山洞1号井盖</span>
+        <span>水位：5.61</span>
+        <span>井盖丢失</span>
+      </div>
+      <div class="line_item">
+        <span>w01</span>
+        <span>2019/12/23 16：00</span>
+        <span>井盖</span>
+        <span>白云区大山洞1号井盖</span>
+        <span>水位：5.61</span>
+        <span>井盖丢失</span>
+      </div>
+    </div>
+  </div>
+</div>

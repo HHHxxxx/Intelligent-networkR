@@ -4,14 +4,13 @@
   position: relative;
   box-shadow: 0 0 20px #1E5A88 inset;
   border: 1px solid #253B58;
-  margin-bottom: 5px;
+  margin-bottom: 1vh;
 }
-.latest_data .title {
-  text-indent: 2rem;
+.latest_data .title span{
   color: #fff;
-  font-size: 14px;
-  text-align: left;
-  padding-top: 10px;
+  font-size: 1rem;
+  margin-left: 1vw;
+  margin-top: 1.5vh;
 }
 .list_data .line_item{
   height: 60px;
@@ -27,6 +26,11 @@
   color: #fff;
   font-size: 12px;
 }
+/*头部下拉菜单*/
+.box{
+  margin-top: 1.5vh;
+  margin-right: 2vw;
+}
 /* 列表页头标题样式 */
 .line_head{
   background: #18273F;
@@ -39,5 +43,35 @@
   overflow: hidden;
 }
 .data_body .line_item{
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+.box{
+  color: #fff;
+  font-size: 1rem;
+}
+.event{
+  background-color: rgba(0,0,0,0);
+  border: none;
+  color: #fff;
+  margin-left: 1vw;
+}
+::ng-deep .box .ui-dropdown {
+  min-width: 2em;
+  float: right;
+  line-height: 1.5vh;
+}
+.container{
+  margin-top: 5vh;
+  height: 25vh;
+  text-align: center;
+}
+.ui-g-6{
+  margin-bottom: 2vh;
+}
+::ng-deep body .ui-tabview .ui-tabview-panels{
+  background: none;
+  border: 0;
+}
+.drop-box {
+  min-width: 8em;
 }

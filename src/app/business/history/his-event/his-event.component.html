@@ -5,71 +5,32 @@
     <span class="rt"></span>
     <span class="rb"></span>
   </div>
-  <p class="title">事件列表</p>
-  <div class="list_data">
+  <div class="ui-g">
+    <div class="title ui-g-2">
+      <p>事件列表</p>
+    </div>
+    <div class="radioButton ui-g-6">
+      <p-radioButton name="group1" value="1" label="今日" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group1" value="2" label="本周" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group1" value="3" label="本月" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+      <p-radioButton name="group1" value="4" label="本年" [(ngModel)]="val1" inputId="opt1"></p-radioButton>
+    </div>
+    <div class="box ui-g-4">
+        <p-dropdown class="drop-box" [options]="items" [(ngModel)]="item" placeholder="7081-0号管线" [itemSize]="20"></p-dropdown>
+    </div>
+  </div>
+  <div class="ui-g-12 list_data">
     <div class="line_item line_head">
-      <span>异常目标ID</span>
-      <span>异常时间</span>
-      <span>异常类型</span>
-      <span>坐标</span>
-      <span>异常状态</span>
-      <span>问题类型</span>
-      <span>操作</span>
+      <span *ngFor="let i of head">{{i.header}}</span>
     </div>
     <div class="data_body">
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
-      </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
-      </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
-      </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
-      </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
-      </div>
-      <div class="line_item">
-        <span>w01</span>
-        <span>2019/12/23 16：00</span>
-        <span>井盖</span>
-        <span>白云区大山洞1号井盖</span>
-        <span>水位：5.61</span>
-        <span>井盖丢失</span>
-        <span><button class="ui-button-danger">指派</button></span>
+      <div class="line_item" *ngFor="let item of tableContent">
+        <span>{{item?.eventTargetId}}</span>
+        <span>{{item?.currentTime}}</span>
+        <span>{{item?.targetType}}</span>
+        <span>{{item?.waterLevel}}</span>
+        <span>{{item?.eventType}}</span>
+        <span>{{item?.eventState}}</span>
       </div>
     </div>
   </div>

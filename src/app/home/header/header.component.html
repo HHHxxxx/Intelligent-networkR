@@ -1,12 +1,14 @@
 <div class="header flex">
   <div class="logo">
-    <img src="../../../assets/lr_logo.png" alt="LOGO">
+    <img src="assets/lr_logo.png" alt="LOGO">
   </div>
   <div class="header_content flex">
-      <a class="title" [routerLink]="['/home/main']">首页</a>
-      <a class="title" [routerLink]="['/home/trouble']">故障处理</a>
-      <a class="title" [routerLink]="['/home/history']">管线状态</a>
-      <a class="title" [routerLink]="['/home/inspec']">巡检记录</a>
+    <ul>
+      <li class="title" [routerLink]="['/home/main']">首页</li>
+      <li class="title" [routerLink]="['/home/trouble']">故障处理</li>
+      <li class="title" [routerLink]="['/home/history']">管线状态</li>
+      <li class="title" [routerLink]="['/home/inspec']">巡检记录</li>
+    </ul>
   </div>
   <div class="login_out flex">
     <a [routerLink]="['/login']">注销</a>

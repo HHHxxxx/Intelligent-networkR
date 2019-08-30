@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'rbi-insp-recording',
-  templateUrl: './insp-recording.component.html',
-  styleUrls: ['./insp-recording.component.less']
+  selector: 'rbi-echarts-bar-records',
+  templateUrl: './echarts-bar-records.component.html',
+  styleUrls: ['./echarts-bar-records.component.less']
 })
-export class InspRecordingComponent implements OnInit {
+export class EchartsBarRecordsComponent implements OnInit {
   val1: string;
   item: string;
   items =  [

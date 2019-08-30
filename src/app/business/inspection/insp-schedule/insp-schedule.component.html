@@ -6,67 +6,63 @@
       <span class="rt"></span>
       <span class="rb"></span>
     </div>
-    <p class="title">管网巡检指派进度</p>
-    <div class="list_data">
+    <div class="title ui-g-12">
+      <div class="ui-g-3">
+        <span>管线巡检指派</span>
+      </div>
+      <div class="ui-g-5">
+        <div class="box">
+          <button type="button" (click)="showDialog()" pButton label="巡检指派"></button>
+        </div>
+      </div>
+      <div class="ui-g-4">
+        <div class="box">
+          <p-dropdown class="drop-box" [options]="items" [(ngModel)]="item" placeholder="7081-0管线" [itemSize]="20"></p-dropdown>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g-12 list_data">
       <div class="line_item line_head">
-        <span>巡检地区名称</span>
-        <span>巡检管线名称</span>
-        <span>巡检起始点</span>
-        <span>巡检结束点</span>
-        <span>巡检任务接收时间</span>
-        <span>巡检任务结束时间</span>
+        <span *ngFor="let i of head">{{i.header}}</span>
       </div>
       <div id="data_body">
-        <div class="line_item">
-          <span>白云区云城尚品</span>
-          <span>雨污合流01</span>
-          <span>w01</span>
-          <span>w10</span>
-          <span>2018/12/20</span>
-          <span>2018/12/20</span>
-        </div>
-        <div class="line_item">
-          <span>白云区云城尚品</span>
-          <span>雨污合流01</span>
-          <span>w01</span>
-          <span>w10</span>
-          <span>2018/12/20</span>
-          <span>2018/12/20</span>
-        </div>
-        <div class="line_item">
-          <span>白云区云城尚品</span>
-          <span>雨污合流01</span>
-          <span>w01</span>
-          <span>w10</span>
-          <span>2018/12/20</span>
-          <span>2018/12/20</span>
-        </div>
-        <div class="line_item">
-          <span>白云区云城尚品</span>
-          <span>雨污合流01</span>
-          <span>w01</span>
-          <span>w10</span>
-          <span>2018/12/20</span>
-          <span>2018/12/20</span>
-        </div>
-        <div class="line_item">
-          <span>白云区云城尚品</span>
-          <span>雨污合流01</span>
-          <span>w01</span>
-          <span>w10</span>
-          <span>2018/12/20</span>
-          <span>2018/12/20</span>
-        </div>
-        <div class="line_item">
-          <span>白云区云城尚品</span>
-          <span>雨污合流01</span>
-          <span>w01</span>
-          <span>w10</span>
-          <span>2018/12/20</span>
-          <span>2018/12/20</span>
+        <div class="line_item" *ngFor="let item of tableContent">
+          <span>{{item?.regionId}}</span>
+          <span>{{item?.pipeCircuitId}}</span>
+          <span>{{item?.startPipeId}}</span>
+          <span>{{item?.endPipeId}}</span>
+          <span>{{item?.receivingTime}}</span>
+          <span>{{item?.completeTime}}</span>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<!--巡检指派弹框-->
+<p-dialog header="任务指派" [(visible)]="display" [modal]="true" [responsive]="true" [style]="{width: '50vw', height: '30vh'}">
+  <div class="container ui-g-12">
+    <div class="ui-g-12">
+      <div class="ui-g-4">巡检地区:
+        <p-dropdown class="" [options]="regions" [(ngModel)]="region" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+      </div>
+      <div class="ui-g-4">巡检人：
+        <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+      </div>
+      <div class="ui-g-4">巡检管线:
+        <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+      </div>
+    </div>
+    <div class="ui-g-12">
+      <div class="ui-g-4">巡检起始点:
+        <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+      </div>
+      <div class="ui-g-4">巡检结束点：
+        <p-dropdown class="" [options]="items" [(ngModel)]="item" placeholder="请选择任务信息" [itemSize]="20"></p-dropdown>
+      </div>
+    </div>
+  </div>
+  <p-footer>
+    <button type="button" pButton icon="pi pi-check" (click)="display=false" label="确认指派"></button>
+    <button type="button" pButton icon="pi pi-close" (click)="display=false" label="取消指派" class="ui-button-secondary"></button>
+  </p-footer>
+</p-dialog>

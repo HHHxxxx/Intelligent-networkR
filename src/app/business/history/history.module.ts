@@ -10,10 +10,12 @@ import { HisStatisticsComponent } from './his-statistics/his-statistics.componen
 import { HisFlowComponent } from './his-flow/his-flow.component';
 import {EnchantsBarModule} from '../../common/components/echarts-bar/enchants-bar.module';
 import {EchartsMapModule} from '../../common/components/echarts-map/echarts-map.module';
-import {EchartsLineModule} from '../../common/components/echarts-line/echarts-line.module';
 import {EchartsPieModule} from '../../common/components/echarts-pie/echarts-pie.module';
 import {EchartsCdkModule} from '../../common/components/echarts-cdk/echarts-cdk.module';
 import {MainService} from '../../common/services/main.service';
+import {DropdownModule, MultiSelectModule, RadioButtonModule} from 'primeng/primeng';
+import {TableModule} from 'primeng/table';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,12 @@ import {MainService} from '../../common/services/main.service';
     EnchantsBarModule,
     EchartsMapModule,
     EchartsPieModule,
-    EchartsCdkModule
+    EchartsCdkModule,
+    MultiSelectModule,
+    TableModule,
+    FormsModule,
+    RadioButtonModule,
+    DropdownModule
   ],
   providers: [MainService]
 })

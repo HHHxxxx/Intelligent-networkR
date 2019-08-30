@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'rbi-echarts-bar-repair',
@@ -6,88 +6,136 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./echarts-bar-repair.component.less']
 })
 export class EchartsBarRepairComponent implements OnInit {
-
-  constructor() { }
-  repair = {
-    textStyle: {
-      color: '#fff'
-    },
-    title: {
-      text: '管线维修统计',
-      textStyle: {
-        color: '#fff'
-      }
-    },
-    tooltip: {
-      trigger: 'axis',
-      axisPointer: {
-        type: 'cross',
-        crossStyle: {
-          color: '#999'
-        }
-      }
-    },
-    toolbox: {
-      feature: {
-        dataView: {show: true, readOnly: false},
-        magicType: {show: true, type: ['line', 'bar']},
-        restore: {show: true},
-        saveAsImage: {show: true}
-      }
-    },
-    legend: {
-      data: ['异常数', '维修次数'],
-      textStyle: {
-        color: '#fff'
-      },
-    },
-    xAxis: [
-      {
-        type: 'category',
-        data: ['1号管线', '2号管线', '3号管线', '4号管线', '5号管线', '6号管线', '7号管线', '8号管线', '9号管线', '10号管线', '11号管线', '12号管线'],
-        axisPointer: {
-          type: 'shadow'
-        }
-      }
-    ],
-    yAxis: [
-      {
-        type: 'value',
-        name: '异常',
-        min: 0,
-        max: 250,
-        interval: 50,
-        axisLabel: {
-          formatter: '{value} '
-        }
-      },
-      {
-        type: 'value',
-        name: '维修数',
-        min: 0,
-        max: 25,
-        interval: 5,
-        axisLabel: {
-          formatter: '{value} '
-        }
-      }
-    ],
-    series: [
-      {
-        name: '异常数',
-        type: 'bar',
-        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3]
-      },
-
-      {
-        name: '维修次数',
-        type: 'line',
-        yAxisIndex: 1,
-        data: [2.0, 2.2, 3.3, 4.5, 6.3, 10.2, 20.3, 23.4, 23.0, 16.5, 12.0, 6.2]
-      }
-    ]
-  };
+  @Input()RepairData: any;
+  public option: any;
+  constructor() {}
   ngOnInit() {
+    this.setData();
+  }
+  public  setOption(data): void {
+    this.option = {
+      textStyle: {
+        color: '#fff'
+      },
+      title: {
+        text: '管线维修统计',
+        textStyle: {
+          color: '#fff'
+        },
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'cross',
+          label: {
+            backgroundColor: '#283b56'
+          }
+        }
+      },
+      legend: {
+        data: ['维修次数', '异常数'],
+        textStyle: {
+          color: '#fff'
+        },
+      },
+      toolbox: {
+        show: true,
+        feature: {
+          dataView: {readOnly: false},
+          restore: {},
+          saveAsImage: {}
+        }
+      },
+      dataZoom: {
+        show: false,
+        start: 0,
+        end: 100
+      },
+      xAxis: [
+        {
+          type: 'category',
+          boundaryGap: true,
+          data: (function foo() {
+            let now = new Date();
+            const res = [];
+            let len = 10;
+            while (len--) {
+              res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
+              // @ts-ignore
+              now = new Date(now - 2000);
+            }
+            return res;
+          })()
+        },
+        {
+          type: 'category',
+          boundaryGap: true,
+          data: (function foo() {
+            data.shift();
+            data.push(Math.round(Math.random() * 12));
+            return data;
+          })()
+        }
+      ],
+      yAxis: [
+        {
+          type: 'value',
+          scale: true,
+          name: '异常',
+          max: 30,
+          min: 0,
+          boundaryGap: [0.2, 0.2]
+        },
+        {
+          type: 'value',
+          scale: true,
+          name: '维修数',
+          max: 1200,
+          min: 0,
+          boundaryGap: [0.2, 0.2]
+        }
+      ],
+      series: [
+        {
+          name: '异常数',
+          type: 'bar',
+          xAxisIndex: 1,
+          yAxisIndex: 1,
+          data: (function foo() {
+            data.shift();
+            data.push(Math.round(Math.random() * 12));
+            return data;
+          })()
+        },
+        {
+          name: '维修次数',
+          type: 'line',
+          data: (function foo() {
+            data.shift();
+            data.push(Math.round(Math.random() * 12));
+            return data;
+          })()
+        }
+      ]
+    };
+  }
+  public setData(): void {
+    const res = [];
+    let len = 10;
+    while (len--) {
+      res.push(Math.round(Math.random() * 100));
+    }
+    this.setOption(res);
+    setInterval(() => this.setOptionData(res), 10000);
+    //
+  }
+  public setOptionData(data): void {
+    const axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
+    const data0 = this.option.series[0].data;
+    console.log(data0);
+    this.option.xAxis[0].data.shift();
+    this.option.xAxis[0].data.push(axisData);
+    this.setOption(data);
   }
 
 }

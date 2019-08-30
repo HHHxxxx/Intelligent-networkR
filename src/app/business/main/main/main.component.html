@@ -1,21 +1,21 @@
 <div class="main">
   <div class="ui-g">
     <div class="main-left ui-g-3">
-      <rbi-main-ranking></rbi-main-ranking>
-      <rbi-main-description></rbi-main-description>
+      <rbi-main-ranking [PipeWF]="PipeWF"></rbi-main-ranking>
+      <rbi-main-description [PLCI]="PLCI"></rbi-main-description>
     </div>
     <div class="main-center ui-g-6">
-      <rbi-main-map></rbi-main-map>
-      <div class="ui-g-6">
-        <rbi-main-loadrate></rbi-main-loadrate>
+      <rbi-main-map [homepageWell]="homepageWell" [homepagePipe]="homepagePipe"></rbi-main-map>
+      <div class="ui-g-6 loadrate">
+        <rbi-main-loadrate [avgLoadRatio]="avgLoadRatio"></rbi-main-loadrate>
       </div>
-      <div class="ui-g-6">
+      <div class="ui-g-6 flow">
         <rbi-main-flow></rbi-main-flow>
       </div>
     </div>
     <div class="main-right ui-g-3">
-      <rbi-main-event></rbi-main-event>
-      <rbi-main-proportion></rbi-main-proportion>
+      <rbi-main-event [exceptionList]="exceptionList"></rbi-main-event>
+      <rbi-main-proportion [abnormal]="abnormal"></rbi-main-proportion>
     </div>
   </div>
 </div>
