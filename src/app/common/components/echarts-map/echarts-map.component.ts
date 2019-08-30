@@ -2,7 +2,6 @@ import {Component, OnInit, Input, SimpleChanges, OnChanges} from '@angular/core'
 import {MainService} from '../../services/main.service';
 import {HttpClient} from '@angular/common/http';
 import {SessionService} from '../../services/session.service';
-
 declare let BMap: any;
 declare let BMAP_ANCHOR_TOP_LEFT: any;
 declare let BMAP_NORMAL_MAP: any;
