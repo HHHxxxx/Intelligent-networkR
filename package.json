@@ -23,7 +23,7 @@
     "core-js": "^2.5.4",
     "echarts": "^4.2.1",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ngx-echarts": "^4.2.1",
     "ngx-loading": "^3.0.1",
     "npm": "^6.10.1",
